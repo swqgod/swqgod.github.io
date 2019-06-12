@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>My Website</title>
+</head>
+<body>
+<h1 id="theme">Hello world.</h1>
+<h1 id="datetime"></h1>
+</body>
+<script type="text/javascript">
+    let theme = document.getElementById("theme")
+    let datetime = document.getElementById("datetime")
+    let colorList = ["color: #FF0000", "color: #00FF00", "color: #0000FF", 
+                    "color: #FFFF00", "color: #FF00FF", "color: #00FFFF"]
+    let colorListIndex = 0;
+    function changeColor()
+    {
+        if(colorListIndex++ == 5)
+            colorListIndex = 0;
+        theme.style = colorList[colorListIndex];
+    }
+    function myTimer() {
+        var d = new Date();
+        document.getElementById("datetime").innerHTML = d;
+    }
+    window.setInterval(myTimer, 1000);
+    window.setInterval(changeColor, 1000);
+</script>
+</html>
